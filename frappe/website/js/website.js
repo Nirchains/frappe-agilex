@@ -389,13 +389,16 @@ $(document).ready(function() {
 
 $(document).on("page-change", function() {
 	$(document).trigger("apply_permissions");
+	/*PFG:
 	$('.dropdown-toggle').dropdown();
 
+	
 	//multilevel dropdown fix
 	$('.dropdown-menu .dropdown-submenu .dropdown-toggle').on('click', function(e) {
 		e.stopPropagation();
 		$(this).parent().parent().parent().addClass('open');
 	});
+	*/
 
 	$.extend(frappe, frappe.get_cookies());
 	frappe.session = {'user': frappe.user_id};
