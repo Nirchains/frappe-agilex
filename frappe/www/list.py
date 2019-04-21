@@ -22,7 +22,7 @@ def get_context(context, **dict_params):
 	context.doctype = doctype
 	context.txt = frappe.local.form_dict.txt
 	context.update(get(**frappe.local.form_dict))
-
+	
 @frappe.whitelist(allow_guest=True)
 def get(doctype, txt=None, limit_start=0, limit=20, pathname=None, **kwargs):
 	"""Returns processed HTML page for a standard listing."""

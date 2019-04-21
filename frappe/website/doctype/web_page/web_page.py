@@ -12,8 +12,6 @@ from jinja2.exceptions import TemplateSyntaxError
 import frappe
 from frappe import _
 
-from cms.cms.doctype.web_module.web_module import load_module_positions
-
 from frappe.utils import get_datetime, now, strip_html
 from frappe.utils.jinja import render_template
 from frappe.website.doctype.website_slideshow.website_slideshow import get_slideshow
@@ -58,9 +56,6 @@ class WebPage(WebsiteGenerator):
 		self.set_metatags(context)
 		self.set_breadcrumbs(context)
 		self.set_title_and_header(context)
-
-		#PFG
-		context.module_positions, context.layout_positions = load_module_positions(context.modules)
 
 		return context
 
