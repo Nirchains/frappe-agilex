@@ -53,5 +53,5 @@ frappe.ui.DropZone.TEMPLATE =
 `;
 frappe.ui.DropZone.OPTIONS  = 
 {
-	title: 'Drop Here'
+	title: __('Arrastre aquí')
 };
