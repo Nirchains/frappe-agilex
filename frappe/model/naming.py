@@ -213,8 +213,9 @@ def validate_name(doctype, name, case=None, merge=False):
 
 	special_characters = "<>"
 	if re.findall("[{0}]+".format(special_characters), name):
+		frappe.log_error("{0}-/{1}".format(name, re.findall("[{0}]+".format(special_characters), name)))
 		message = ", ".join("'{0}'".format(c) for c in special_characters)
-		frappe.throw(_("Name cannot contain special characters like {0}").format(message), frappe.NameError)
+		frappe.throw(_("Name cannot contain special characters like {0} - {1}").format(message, name), frappe.NameError)
 
 	return name
 
