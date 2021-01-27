@@ -49,9 +49,13 @@ class WebsiteSettings(Document):
 					frappe.throw(_("{0} does not exist in row {1}").format(footer_item.parent_label, footer_item.idx))
 
 				elif not parent_label_item[0] or parent_label_item[0].url:
+				#PFG
+				#elif not parent_label_item[0] or parent_label_item[0].url:
 					# parent cannot have url
-					frappe.throw(_("{0} in row {1} cannot have both URL and child items").format(footer_item.parent_label,
-						footer_item.idx))
+					frappe.throw(_("{0} in row {1} cannot have both URL and child items").format(top_bar_item.parent_label,
+						top_bar_item.idx))
+					#frappe.throw(_("{0} in row {1} cannot have both URL and child items").format(top_bar_item.parent_label,
+					#	top_bar_item.idx))
 
 	def on_update(self):
 		self.clear_cache()
