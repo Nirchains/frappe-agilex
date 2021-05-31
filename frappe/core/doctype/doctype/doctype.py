@@ -730,7 +730,9 @@ def validate_fields(meta):
 			if d.options != d.parent:
 				options = frappe.db.get_value("DocType", d.options, "name")
 				if not options:
-					frappe.throw(_("{0}: Options must be a valid DocType for field {1} in row {2}").format(docname, d.label, d.idx), WrongOptionsDoctypeLinkError)
+					#PFG
+					pass
+					#frappe.throw(_("{0}: Options must be a valid DocType for field {1} in row {2}").format(docname, d.label, d.idx), WrongOptionsDoctypeLinkError)
 				elif not (options == d.options):
 					frappe.throw(_("{0}: Options {1} must be the same as doctype name {2} for the field {3}")
 						.format(docname, d.options, options, d.label), DoctypeLinkError)
