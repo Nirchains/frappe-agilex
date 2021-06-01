@@ -12,7 +12,8 @@ from frappe.website.doctype.website_theme.website_theme import add_website_theme
 
 class WebsiteSettings(Document):
 	def validate(self):
-		self.validate_top_bar_items()
+		#PFG
+		#self.validate_top_bar_items()
 		self.validate_footer_items()
 		self.validate_home_page()
 
